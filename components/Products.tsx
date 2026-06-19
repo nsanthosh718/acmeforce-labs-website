@@ -15,14 +15,14 @@ const products = [
     gradient: 'from-accent/20 to-neon-blue/20',
   },
   {
-    name: 'PRANAY',
-    tagline: 'JARVIS-style AI Assistant',
-    description: 'Autonomous AI orchestration system with multi-agent architecture, persistent memory, tool integrations, and voice interface. Your personal intelligent assistant.',
+    name: 'Pranay',
+    tagline: 'Personal Multi-Agent AI Assistant',
+    description: 'An autonomous AI orchestration system with multi-agent architecture, LangGraph supervisor, persistent memory, tool integrations, and observability via Langfuse. Your personal intelligent assistant that reasons, plans, and acts.',
     category: 'Agent',
     status: 'Beta',
     statusColor: 'bg-neon-pink/20 text-neon-pink',
     icon: '🧠',
-    tech: ['Python', 'LLM Orchestration', 'Multi-Agent', 'Memory Systems'],
+    tech: ['Python', 'LangGraph', 'Anthropic', 'FastAPI', 'Multi-Agent', 'Langfuse'],
     gradient: 'from-neon-pink/20 to-accent/20',
   },
   {
