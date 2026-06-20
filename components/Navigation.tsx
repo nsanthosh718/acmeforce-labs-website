@@ -22,6 +22,7 @@ export default function Navigation() {
 
         <div className="hidden md:flex gap-10 items-center">
           <a href="#products" className="text-sm text-gray-400 hover:text-white transition">Products</a>
+          <a href="/marketplace" className="text-sm text-gray-400 hover:text-white transition">Marketplace</a>
           <a href="#categories" className="text-sm text-gray-400 hover:text-white transition">Categories</a>
           <a href="#about" className="text-sm text-gray-400 hover:text-white transition">About</a>
           <a href="#contact" className="px-5 py-2 bg-accent hover:bg-accent-dark text-white text-sm rounded-lg transition">
@@ -39,6 +40,7 @@ export default function Navigation() {
       {isOpen && (
         <div className="md:hidden bg-surface-light border-t border-white/5 px-6 py-4 space-y-3">
           <a href="#products" className="block text-sm text-gray-400 py-2">Products</a>
+          <a href="/marketplace" className="block text-sm text-gray-400 py-2">Marketplace</a>
           <a href="#categories" className="block text-sm text-gray-400 py-2">Categories</a>
           <a href="#about" className="block text-sm text-gray-400 py-2">About</a>
           <a href="#contact" className="block text-sm text-accent py-2">Get Access</a>
