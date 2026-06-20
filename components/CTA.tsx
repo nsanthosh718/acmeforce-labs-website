@@ -24,7 +24,7 @@ export default function CTA() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="mailto:hello@acmeforcelabs.com" className="px-8 py-4 bg-accent hover:bg-accent-dark text-white rounded-xl text-lg font-medium transition glow">
-              Get in Touch
+              Browse Marketplace
             </a>
             <a href="#products" className="px-8 py-4 bg-white/5 hover:bg-white/10 border border-white/10 text-white rounded-xl text-lg font-medium transition">
               View Products
