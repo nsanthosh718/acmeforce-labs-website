@@ -18,4 +18,141 @@
   .card-glow:hover {
     box-shadow: 0 0 30px rgba(108, 99, 255, 0.2), 0 0 60px rgba(0, 245, 212, 0.05);
   }
+
+  /* 3D Perspective utilities */
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  .perspective-1500 {
+    perspective: 1500px;
+  }
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+
+  /* Holographic shimmer */
+  .holographic-border {
+    position: relative;
+    overflow: hidden;
+  }
+  .holographic-border::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: inherit;
+    padding: 2px;
+    background: linear-gradient(
+      135deg,
+      #6C63FF,
+      #00F5D4,
+      #4CC9F0,
+      #FF6B9D,
+      #6C63FF,
+      #00F5D4
+    );
+    background-size: 300% 300%;
+    animation: holographic-shimmer 4s ease infinite;
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  /* Pulsing glow ring */
+  .glow-ring {
+    position: relative;
+  }
+  .glow-ring::after {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: inherit;
+    background: conic-gradient(from 0deg, #6C63FF, #00F5D4, #4CC9F0, #FF6B9D, #6C63FF);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    animation: pulse-glow 3s ease-in-out infinite;
+    filter: blur(8px);
+    z-index: -1;
+  }
+  .glow-ring:hover::after {
+    opacity: 0.6;
+  }
+
+  /* 3D card lift */
+  .card-3d {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transform-style: preserve-3d;
+  }
+  .card-3d:hover {
+    box-shadow:
+      0 20px 60px rgba(108, 99, 255, 0.3),
+      0 0 40px rgba(0, 245, 212, 0.15);
+  }
+
+  /* Floating orb animation */
+  .float-orb {
+    animation: float-orb 6s ease-in-out infinite;
+  }
+  .float-orb-delayed {
+    animation: float-orb 6s ease-in-out infinite 2s;
+  }
+  .float-orb-slow {
+    animation: float-orb 8s ease-in-out infinite 1s;
+  }
+
+  /* Flow line pulse animation */
+  .flow-pulse {
+    animation: flow-pulse 2s ease-in-out infinite;
+  }
+  .flow-dot {
+    animation: flow-dot 2.5s linear infinite;
+  }
+}
+
+/* Keyframe animations */
+@keyframes holographic-shimmer {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.02); }
+}
+
+@keyframes float-orb {
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  25% { transform: translateY(-10px) translateX(5px); }
+  50% { transform: translateY(-5px) translateX(-5px); }
+  75% { transform: translateY(-15px) translateX(3px); }
+}
+
+@keyframes flow-pulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+
+@keyframes flow-dot {
+  0% { transform: translateX(0); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateX(100%); opacity: 0; }
+}
+
+@keyframes particle-float {
+  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.6; }
+  25% { transform: translate(10px, -20px) scale(1.1); opacity: 0.8; }
+  50% { transform: translate(-5px, -35px) scale(0.9); opacity: 0.4; }
+  75% { transform: translate(15px, -15px) scale(1.05); opacity: 0.7; }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
